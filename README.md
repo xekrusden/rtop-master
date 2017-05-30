@@ -12,22 +12,11 @@ Only Linux systems can be monitored, and most modern distros will work.
 
 `rtop` is MIT-licensed and can be used anywhere with attribution.
 
-*`rtop`'s [home page](http://www.rtop-monitor.org/) has more information
-and screenshots!*
-
 ## build
 
 `rtop` is written in [go](http://golang.org/), and requires Go version 1.2
-or higher. To build, `go get` it:
-
-    go get github.com/rapidloop/rtop
-
-You should find the binary `rtop` under `$GOPATH/bin` when the command
-completes. There are no runtime dependencies or configuration needed.
+or higher. 
 
 ## contribute
 
 Pull requests welcome. Keep it simple.
-
-## changelog
-* 9-May-2015: first public release
