@@ -1,4 +1,4 @@
-// +build !windows
+	// +build !windows
 
 package main
 
@@ -11,4 +11,4 @@ func clearConsole() {}
 
 func getOutput() io.Writer {
 	return os.Stdout
-}
+	}
