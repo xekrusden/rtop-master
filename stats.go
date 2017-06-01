@@ -87,7 +87,7 @@ type Stats struct {
 	SwapFree     uint64
 	FSInfos      []FSInfo
 	NetIntf      map[string]NetIntfInfo
-	CPU          CPUInfo // or []CPUInfo to get all the cpu-core's stats?
+	CPU          CPUInfo	 // or []CPUInfo to get all the cpu-core's stats?
 }
 
 func getAllStats(client *ssh.Client, stats *Stats) {
@@ -335,7 +335,8 @@ func parseCPUFields(fields []string, stat *cpuRaw) {
 	}
 }
 
-// the CPU stats that were fetched last time round
+		// the CPU stats that were fetched last time round
+
 var preCPU cpuRaw
 
 func getCPU(client *ssh.Client, stats *Stats) (err error) {
@@ -353,7 +354,7 @@ func getCPU(client *ssh.Client, stats *Stats) (err error) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		fields := strings.Fields(line)
-		if len(fields) > 0 && fields[0] == "cpu" { // changing here if want to get every cpu-core's stats
+		if len(fields) > 0 && fields[0] == "cpu" { 	// changing here if want to get every cpu-core's stats
 			parseCPUFields(fields, &nowCPU)
 			break
 		}
@@ -374,4 +375,4 @@ func getCPU(client *ssh.Client, stats *Stats) (err error) {
 END:
 	preCPU = nowCPU
 	return
-}
+	}
